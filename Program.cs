@@ -19,7 +19,7 @@ namespace homm_queue
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http://localhost:8080")
+                .UseUrls("http://0.0.0.0:80")
                 .UseStartup<Startup>();
     }
 }

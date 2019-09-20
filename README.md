@@ -4,6 +4,13 @@ Players queue for Heroes of Might and Magic.
 
 ![HoMM queue](/screenshot.png?raw=true "HoMM queue")
 
+## Requirements
+
+.NET Core:
+
+- SDK: 2.2.401
+- runtime: 2.2.6
+
 ## Build and run
 
 ```

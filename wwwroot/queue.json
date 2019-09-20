@@ -1,0 +1,58 @@
+{
+    "players": [
+        {
+            "name": "Chad",
+            "slackID": "U4JDL9QBC",
+            "playing": true,
+            "currentTurn": false
+        },
+        {
+            "name": "Martin",
+            "slackID": "U4JLODQ3F",
+            "playing": true,
+            "currentTurn": false
+        },
+        {
+            "name": "Arthur",
+            "slackID": "UL3U201HV",
+            "playing": true,
+            "currentTurn": false
+        },
+        {
+            "name": "Max",
+            "slackID": "U40O175F0",
+            "playing": true,
+            "currentTurn": false
+        },
+        {
+            "name": "Pete",
+            "slackID": "U8NWW0UPQ",
+            "playing": true,
+            "currentTurn": false
+        },
+        {
+            "name": "Karl",
+            "slackID": "UFJQJVN7E",
+            "playing": true,
+            "currentTurn": true
+        },
+        {
+            "name": "John",
+            "slackID": "U7KL7WQ5U",
+            "playing": false,
+            "currentTurn": false
+        },
+        {
+            "name": "Stephen",
+            "slackID": "U4KLQ46KC",
+            "playing": true,
+            "currentTurn": false
+        },
+        {
+            "name": "Ivan",
+            "slackID": "USWQQ4J64",
+            "playing": true,
+            "currentTurn": false
+        }
+    ]
+}

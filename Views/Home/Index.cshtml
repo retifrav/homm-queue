@@ -1,0 +1,98 @@
+﻿@model IEnumerable<homm_queue.Models.Player>
+
+<div style="text-align:center;">
+    <h1 class="title"><img id="logo" src="/homm3.png" /> <span>HoMM Queue</span></h1>
+    
+    @if (ViewData["Error"]  != null)
+    {
+        <div class="alert alert-danger" role="alert">
+          <b>[error]</b> Check <code>queue.json</code>, it has @ViewData["Error"]
+        </div>
+    }
+    else
+    {
+        <div class="heading"><h3>Current turn</h3></div>
+        <div id="loading" class="progress" style="width:200px; margin:0 auto;">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+        </div>
+        <div id="currentTurn" class="turn" style="display:none;">
+            <span id="whosturn">unknown</span>
+            <button id="btnMakeTurn" type="button" class="btn btn-primary" onclick="makeTurn();">next</button>
+        </div>
+
+        <div class="heading"><h3>Total players: @(Model.Count())</h3></div>
+        @foreach (var item in Model)
+        {
+            @if (item.CurrentTurn)
+            {
+                <div class="player turn">@item.Name</div>
+            }
+            else
+            {
+                <div class="player">@item.Name</div>
+            }
+        }
+    }
+</div>
+
+<script>
+    window.onload = function()
+    {
+        let xhr = new XMLHttpRequest();
+        xhr.responseType = "json";
+        xhr.open("GET", "/GetCurrentTurn");
+        xhr.send();
+
+        xhr.onload = function()
+        {
+            document.getElementById("loading").style["display"] = "none";
+            document.getElementById("currentTurn").style["display"] = "block";
+            
+            if (xhr.status != 200)
+            {
+                alert("[ERROR] Couldn't get whos turn is it");
+            }
+            else
+            {
+                var whosturn = document.getElementById("whosturn");
+                whosturn.innerText = xhr.response;
+            }
+        };
+
+        xhr.onerror = function()
+        {
+            alert("something went wrong");
+        };
+    }
+
+    function makeTurn()
+    {
+        let xhr = new XMLHttpRequest();
+        xhr.responseType = "json";
+        xhr.open("POST", "/MakeTurn");
+        xhr.send();
+
+        xhr.onload = function()
+        {
+            if (xhr.status != 200)
+            {
+                //let errorText = document.createElement("p");
+                //errorText.innerHTML = "<i>error</i>";
+                //commentsDiv.appendChild(errorText);
+                alert("some error");
+            }
+            else
+            {
+                location.reload(true);
+            }
+        };
+
+        xhr.onerror = function()
+        {
+            //let errorText = document.createElement("p");
+            //errorText.innerHTML = "<i>error</i>";
+            //commentsDiv.appendChild(errorText);
+            alert("something went wrong");
+        };
+    }
+</script>

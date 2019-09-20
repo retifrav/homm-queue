@@ -1,0 +1,32 @@
+@model int
+
+@{
+    var statusCode = Model;
+    string statusmessage;
+    switch (statusCode)
+    {
+        case 400:
+            statusmessage = "Something wrong with your request.";
+            break;
+        case 403:
+            statusmessage = "No access.";
+            break;
+        case 404:
+            statusmessage = "No such page.";
+            break;
+        case 408:
+            statusmessage = "Timeout.";
+            break;
+        case 500:
+            statusmessage = "Server error.";
+            break;
+        default:
+            statusmessage = "Unknown error.";
+            break;
+    }
+}
+
+<div id="main" class="container" style="padding: 50px;">
+    <h1>Error <b>@Model</b></h1>
+    <p>@statusmessage</p>
+</div>

@@ -175,7 +175,7 @@ namespace homm_queue.Controllers
 
                 HttpRequestMessage request = new HttpRequestMessage(
                     HttpMethod.Post,
-                    "services/T4DCCB6O2/BNJ1VMEKW/FSzIk0ZbqkFvUiF2Jf21PEow"
+                    "services/YOUR/SLACK/WEBHOOK"
                     );
                 StringBuilder msg = new StringBuilder()
                     .Append("{\"text\":\"")

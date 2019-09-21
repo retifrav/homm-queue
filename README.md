@@ -4,6 +4,8 @@ Players queue for Heroes of Might and Magic.
 
 ![HoMM queue](/screenshot.png?raw=true "HoMM queue")
 
+More details in the [following article](https://retifrav.github.io/blog/2019/09/21/homm-queue/).
+
 ## Requirements
 
 .NET Core:

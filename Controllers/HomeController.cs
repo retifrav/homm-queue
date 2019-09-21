@@ -73,9 +73,9 @@ namespace homm_queue.Controllers
         [HttpPost("/MakeTurn")]
         public JsonResult MakeTurn()
         {
-            JObject queueJson = ReadQueueFile();
-
             string nextPlayerID = "unknown";
+
+            JObject queueJson = ReadQueueFile();
 
             // if (!string.IsNullOrEmpty(nextPlayer))
             // {
